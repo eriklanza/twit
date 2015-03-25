@@ -1,0 +1,23 @@
+{
+
+
+  search: [
+    {
+      type:'post',
+      query:'https://twitter.com/search?q={{term}}',
+      translate:'parseHTML(response)',
+      name:{
+        selector:'.js-original-tweet',
+        expression:'element.textContent'
+      },
+      link:{
+        selector:'.tweet-text',
+        expression:'"https://twitter.com" + element.getAttribute("href")'
+      },
+      description:{
+        selector:'.js-original-tweet',
+        expression:'element.textContent'
+      }
+    }
+  ]
+}
